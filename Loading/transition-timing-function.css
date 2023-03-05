@@ -1,0 +1,45 @@
+.transition-container {
+    width: 100%;
+    /*margin: 2rem 0;*/
+}
+
+.transition-actions {
+    margin-bottom: 1rem;
+
+}
+
+@keyframes repeatTransition {
+    from {
+        transform: scaleX(.8);
+    }
+    to {
+        transform: scaleX(4);
+    }
+}
+
+.transition-item {
+    height: 40px;
+    background: aqua;
+    transform-origin: top left;
+    transition-property: width;
+    transition-duration: 3s;
+}
+
+.ease {
+    animation: repeatTransition 2s ease infinite ;
+}
+
+.ease-in {
+    animation: repeatTransition 2s ease-in infinite ;
+}
+
+.linear {
+    animation: repeatTransition 2s linear infinite ;
+}
+
+.ease-out {
+    animation: repeatTransition 2s ease-out infinite ;
+}
+.ease-in-out {
+    animation: repeatTransition 2s ease-in-out infinite ;
+}

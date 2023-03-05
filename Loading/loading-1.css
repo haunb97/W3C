@@ -10,16 +10,15 @@
     }
 }
 
-
-.container {
+.container-1 {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: lightblue;
     margin: 5rem;
+    padding: 3rem;
     display: none;
-    overflow: hidden;
+    background: none;
 }
 
 button {
@@ -40,7 +39,7 @@ button {
     border-radius: 50%;
     background-color: aqua !important;
     position: absolute;
-    animation: scaleAnimation 2.2s linear infinite ;
+    animation: scaleAnimation 2s linear infinite ;
 }
 
 .item:nth-child(1) {

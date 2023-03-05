@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <title>Loading</title>
     <link href="loading-2.css" rel="stylesheet" type="text/css">
+    <link href="transition-btn.css" rel="stylesheet" type="text/css">
+    <link href="transition-timing-function.css" rel="stylesheet" type="text/css">
+    <link href="transform.css" rel="stylesheet" type="text/css">
     <link href="loading-1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<h1>Animations</h1>
+<h2>Transition</h2>
+
+<button class="section">Transition</button>
+<section class="wrap-transition-btn">
+    <div style="display: flex;">
+        <div style="width: 50%">
+            <li style="width: 80%;">Transition: là một thuộc tính trong CSS được sử dụng để thiết lập chuyển động mượt
+                mà
+                khi một thuộc tính CSS thay đổi giá trị. Nó cho phép bạn xác định các thuộc tính nào được áp dụng chuyển
+                động, thời gian chuyển động, kiểu chuyển động và độ trễ
+            </li>
+        </div>
+        <div>
+            <!--            <button>click me</button>-->
+            <div class="transition-container">
+                <div class="transition-actions">
+                    <input type="radio" name="radios" value="linear">
+                    <label>Linear</label>
+                    <div class="transition-item linear"></div>
+
+                    <input type="radio" name="radios" value="ease">
+                    <label>Ease</label>
+
+                    <div class="transition-item ease"></div>
+
+                    <input type="radio" name="radios" value="ease-in">
+                    <label>Ease-in</label>
+
+                    <div class="transition-item ease-in"></div>
+
+                    <input type="radio" name="radios" value="ease-out">
+                    <label>Ease-out</label>
+
+                    <div class="transition-item ease-out"></div>
+
+                    <input type="radio" name="radios" value="ease-in-out">
+                    <label>Ease-in-out</label>
+
+                    <div class="transition-item ease-in-out">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2>Animations</h2>
+<button class="section">Transform</button>
+<section>
+    <div class="transform">
+    <div class="transform__left-block"></div>
+    <div class="transform__right-block">
+        <h3>Hello world!</h3>
+        <h4 class="slideInLeft">Hello world!</h4>
+        <h5>Hello world!</h5>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-0">
+        <p class="">heading</p>
+    </div>
+</section>
+
 <button class="section">Loading 1</button>
-<div class="container">
+<div class="container-1">
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -20,35 +90,65 @@
 </div>
 
 <button class="section">Loading 2</button>
-<div class="container">
-    <span class="loader" style="--i:1"> </span>
-    <span class="loader" style="--i:2"> </span>
-    <span class="loader" style="--i:3"> </span>
-    <span class="loader" style="--i:4"> </span>
-    <span class="loader" style="--i:5"> </span>
-    <span class="loader" style="--i:6"> </span>
-    <span class="loader" style="--i:7"> </span>
-    <span class="loader" style="--i:8"> </span>
-    <span class="loader" style="--i:9"> </span>
-    <span class="loader" style="--i:10"> </span>
-    <span class="loader" style="--i:11"> </span>
-    <span class="loader" style="--i:12"> </span>
-</div>
+<section>
+    <div class="content">
+        <div style="width:50%">
+            <ul>
+                <li>Animation: là một thuộc tính trong CSS được sử dụng để tạo ra các hiệu ứng chuyển dộng cho trang web, nó cho phép
+                    tạo ra các hiệu ứng phức tạp
+                    bằng cách thay đổi các thuộc tính CSS
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <span class="loader" style="--i:1"> </span>
+            <span class="loader" style="--i:2"> </span>
+            <span class="loader" style="--i:3"> </span>
+            <span class="loader" style="--i:4"> </span>
+            <span class="loader" style="--i:5"> </span>
+            <span class="loader" style="--i:6"> </span>
+            <span class="loader" style="--i:7"> </span>
+            <span class="loader" style="--i:8"> </span>
+            <span class="loader" style="--i:9"> </span>
+            <span class="loader" style="--i:10"> </span>
+            <span class="loader" style="--i:11"> </span>
+            <span class="loader" style="--i:12"> </span>
+            <span class="loader" style="--i:13"> </span>
+            <span class="loader" style="--i:14"> </span>
+            <span class="loader" style="--i:15"> </span>
+            <span class="loader" style="--i:16"> </span>
+            <span class="loader" style="--i:17"> </span>
+            <span class="loader" style="--i:18"> </span>
+            <span class="loader" style="--i:19"> </span>
+            <span class="loader" style="--i:20"> </span>
+        </div>
+    </div>
+</section>
+
 <script>
+    let radios = document.getElementsByName('radios')
     let myContents = document.getElementsByClassName('section');
     for (let i = 0; i < myContents.length; i++) {
-        myContents[i].addEventListener('click',function () {
+        myContents[i].addEventListener('click', function () {
             this.classList.toggle("active");
             let container = this.nextElementSibling;
             if (container.style.display === 'none') {
                 container.style.display = 'block';
-            }else {
+            } else {
                 container.style.display = 'none';
             }
         })
     }
-</script>
 
+    for (let i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('change', function () {
+            const transitionCycle = document.getElementById('transition-item');
+            console.log('Radio button selected:', this.value);
+            transitionCycle.style.transitionTimingFunction = this.value
+        });
+    }
+</script>
+<!--làm một trang web có các option thêm bớt animation-->
 
 </body>
 </html>

@@ -1,0 +1,43 @@
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+@keyframes rotate45 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(15deg)
+    }
+}
+
+.transform {
+    display: flex;
+}
+
+
+.transform__left-block {
+    width: 50%;
+}
+
+
+.transform__right-block {
+    width: 100%;
+    /*overflow: hidden;*/
+    paddings-left: 4rem;
+}
+
+.transform__right-block h4 {
+    animation-name: slideInRight, rotate45;
+    animation-duration: 2s, 1s;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, infinite;
+    animation-delay: 1s, 4s;
+}
