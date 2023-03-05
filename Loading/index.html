@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <link href="loading-2.css" rel="stylesheet" type="text/css">
+    <link href="loading-1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<button class="section">Loading 1</button>
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+<button class="section">Loading 2</button>
+<div class="container">
+    <span class="loader" style="--i:1"> </span>
+    <span class="loader" style="--i:2"> </span>
+    <span class="loader" style="--i:3"> </span>
+    <span class="loader" style="--i:4"> </span>
+    <span class="loader" style="--i:5"> </span>
+    <span class="loader" style="--i:6"> </span>
+    <span class="loader" style="--i:7"> </span>
+    <span class="loader" style="--i:8"> </span>
+    <span class="loader" style="--i:9"> </span>
+    <span class="loader" style="--i:10"> </span>
+    <span class="loader" style="--i:11"> </span>
+    <span class="loader" style="--i:12"> </span>
+</div>
+<script>
+    let myContents = document.getElementsByClassName('section');
+    for (let i = 0; i < myContents.length; i++) {
+        myContents[i].addEventListener('click',function () {
+            this.classList.toggle("active");
+            let container = this.nextElementSibling;
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+            }else {
+                container.style.display = 'none';
+            }
+        })
+    }
+</script>
+
+
+</body>
+</html>

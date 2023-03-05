@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    background-color: #ccc;
+    position: relative;
+}
+
+
+.section .loader {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+}
