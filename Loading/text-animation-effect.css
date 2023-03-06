@@ -1,0 +1,39 @@
+
+.container-text-effect h2 {
+    position: relative;
+    font-size: 3vw;
+    text-transform: uppercase;
+    -wedkit-text-stroke: 0.1vw red;
+    color: #252839;
+}
+
+@keyframes textEffect {
+    0%, 10%, 90% {
+        width: 0;
+    }
+    70%, 80% {
+        width: 350px;
+    }
+}
+
+.container-text-effect h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3vw;
+    width: 0;
+    height: 100%;
+    text-transform: uppercase;
+    -wedkit-text-stroke: 0.1vw red;
+    color: #01fe87;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: textEffect 2s linear infinite;
+}
+
+/*
+- dùng một element khác có kích thước giống hệt và thay đổi color và chạy animation thay đổi width để có được hiệu ứng
+*/
+
+
